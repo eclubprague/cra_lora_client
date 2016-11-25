@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/eclubprague/cra_lora_client#readme",
   "dependencies": {
+    "bases": "^0.2.1",
     "cpu-stats": "^1.0.0",
     "current-processes": "^0.2.1",
+    "ip": "^1.1.4",
+    "lodash": "^4.17.2",
     "os-utils": "0.0.14",
     "systeminfo": "0.0.1"
   }
