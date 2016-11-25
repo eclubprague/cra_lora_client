@@ -19,22 +19,53 @@ serialPort.on("open", function () {
 });
 
 function init(){
-  	setTimeout(function(){ serialPort.write("sys reset\r\n") }, 0);
-  	setTimeout(function(){ serialPort.write("sys get ver\r\n") }, 100);
-  	setTimeout(function(){ serialPort.write("mac get deveui\r\n") }, 200);
-  	setTimeout(function(){ serialPort.write("mac set devaddr 001A66D6\r\n") }, 300);
-  	setTimeout(function(){ serialPort.write("mac set appskey CAFECAFECAFECAFECAFECAFECAFE0000\r\n") }, 400);
-  	setTimeout(function(){ serialPort.write("mac set nwkskey CAFECAFECAFECAFECAFECAFECAFECAFE\r\n") }, 500);
-  	setTimeout(function(){ serialPort.write("mac save\r\n")}, 600);
+  	setTimeout(function(){ 
+  		console.log("sys reset"); 
+  		serialPort.write("sys reset\r\n");
+  	}, 0);
+  	
+  	setTimeout(function(){ 
+  		console.log("sys get ver"); 
+  		serialPort.write("sys get ver\r\n");
+  	}, 200);
+  	
+  	setTimeout(function(){ 
+  		console.log("mac get deveui");
+  		serialPort.write("mac get deveui\r\n");
+  	}, 300);
+  	
+  	setTimeout(function(){ 
+  		console.log("mac set devaddr 001A66D6");
+  		serialPort.write("mac set devaddr 001A66D6\r\n");
+  	}, 400);
+  	
+  	setTimeout(function(){ 
+  		console.log("mac set appskey CAFECAFECAFECAFECAFECAFECAFE0000");
+  		serialPort.write("mac set appskey CAFECAFECAFECAFECAFECAFECAFE0000\r\n");
+  	}, 500);
+  	
+  	setTimeout(function(){ 
+  		console.log("mac set nwkskey CAFECAFECAFECAFECAFECAFECAFECAFE"); 
+  		serialPort.write("mac set nwkskey CAFECAFECAFECAFECAFECAFECAFECAFE\r\n");
+  	}, 600);
+
+  	setTimeout(function(){ 
+  		console.log("mac save");
+  		serialPort.write("mac save\r\n")
+  	}, 700);
   	//0004A30B001A66D6
+	setTimeout(function(){ 
+		console.log("mac join abp");
+		serialPort.write("mac join abp\r\n");
+	}, 2000);
+
+	setTimeout(function(){ 
+		console.log("mac tx cnf 1 CAFECAFECAFE")
+		serialPort.write("mac tx cnf 1 CAFECAFECAFE\r\n")
+	}, 3000);
+  	
 
   	//https://api.pripoj.me/message/get/0004A30B001A66D6?token=84YTv1eXGqfwcZikLYkqWzR4aoMAyqDZ
 
- // 	setTimeout(function(){ serialPort.write("radio set bw 500\r\n") }, 300);
-	// setTimeout(function(){ serialPort.write("radio set sf sf7\r\n") }, 400);
-	// setTimeout(function(){ serialPort.write("radio set cr 4/8\r\n") }, 500);
-	// setTimeout(function(){ serialPort.write("radio set crc on\r\n") }, 600);
-	// setTimeout(function(){ serialPort.write("radio set wdt "+delay+"\r\n") }, 700);
-	// setTimeout(function(){ serialPort.write("mac pause\r\n") }, 800);  
-	// setTimeout(function(){ serialPort.write("radio rx 0\r\n"); console.log("ok"); }, 900);       
+  
 }
