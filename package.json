@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/eclubprague/cra_lora_client/issues"
   },
-  "homepage": "https://github.com/eclubprague/cra_lora_client#readme"
+  "homepage": "https://github.com/eclubprague/cra_lora_client#readme",
+  "dependencies": {
+    "cpu-stats": "^1.0.0",
+    "current-processes": "^0.2.1",
+    "os-utils": "0.0.14",
+    "systeminfo": "0.0.1"
+  }
 }
